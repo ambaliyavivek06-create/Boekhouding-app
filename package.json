@@ -1,0 +1,39 @@
+{
+  "name": "euro-superstore-boekhouding",
+  "productName": "Euro Superstore Boekhouding",
+  "version": "1.2.0",
+  "description": "Eenvoudige boekhouding voor Euro Superstore",
+  "author": "Vivek Ambaliya",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "31.7.7",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "be.ambaliya.boekhouding",
+    "productName": "Euro Superstore Boekhouding",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "renderer/**/*", "build/icon.*"],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Boekhouding",
+      "installerLanguages": ["nl_NL"]
+    },
+    "portable": { "artifactName": "Boekhouding-portable.exe" }
+  }
+}
