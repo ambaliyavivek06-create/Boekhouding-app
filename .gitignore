@@ -1,0 +1,19 @@
+node_modules/
+dist/
+*.exe
+
+# Boekhoudgegevens — mag NOOIT in de repo
+boekhouding.json
+instellingen.json
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+
+# Facturen / tickets
+facturen/
+scans/
+*.pdf
+
+.DS_Store
+Thumbs.db
